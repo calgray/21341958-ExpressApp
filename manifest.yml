@@ -1,0 +1,12 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: au-syd.mybluemix.net
+  name: CITS5503-21341958-Express
+  host: NodeJS-Simple
+  disk_quota: 1024M
+  services:
+  - NodeJS-Simple-cloudantNoSQLDB
+  - Push Notifications-r6
+  - performance-monitoring-21341958
