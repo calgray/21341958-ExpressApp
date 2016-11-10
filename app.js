@@ -4,22 +4,28 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
 
 var app = express();
 
-var db;
+var config = require("./config");
+
+//global variable
+mongo = require('mongoose').createConnection(config.mongodb.connectionString);
 
 var cloudant;
+var db;
 
 var fileToUpload;
 
 var dbCredentials = {
 	dbName : 'my_sample_db'
 };
+
+var user = require('./routes/user');
+var api = require('./routes/api');
 
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -37,7 +43,10 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd/api+json' }));
-app.use(methodOverride());
+
+app.use(methodOverride('X-HTTP-Method-Override'));
+//app.use(methodOverride());
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/style', express.static(path.join(__dirname, '/views/style')));
 
@@ -101,8 +110,9 @@ function initDBConnection() {
 
 initDBConnection();
 
-app.get('/', routes.twitterstats)
+app.get('/', 					routes.twitterstats);
 app.get('/organiser', routes.index);
+app.get('/api/data', 	api.api);
 
 function createResponseData(id, name, value, attachments) {
 
