@@ -13,6 +13,7 @@
     "method-override": "2.3.x",
     "morgan": "1.6.x",
     "mongoose": "*",
+    "mongodb": "*",
     "errorhandler": "1.4.x",
     "connect-multiparty": "2.0.x"
   },

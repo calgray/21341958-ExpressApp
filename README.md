@@ -5,10 +5,17 @@
 
 Tutorial of ploting realtime data here: https://anmolkoul.wordpress.com/2015/06/05/interactive-data-visualization-using-d3-js-dc-js-nodejs-and-mongodb/
 
-Using the collected data from
+Using the collected data from our nodeRED instance, we can create a rest api to
+query and visualize the data from any server.
 
 
+## Continuous Delivery Pipeline
 
+* Deployment pipeline has two default stages : build and Deployment
+  * allows for the website to remain active when new changes are moving
+    through the pipeline.
+  * Can add extra stages such as various testing phases with debug builds.
+  * Triggered via git pushes.
 
 ## Default ReadMe
 

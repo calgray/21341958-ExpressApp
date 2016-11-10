@@ -13,7 +13,10 @@ var app = express();
 var config = require("./config");
 
 //global variable
-mongo = require('mongoose').createConnection(config.mongodb.connectionString);
+//require('mongodb').MongoClient.connect(config.mongodb.connectionString, function(err, db) {
+//	mongodb = db;
+//});
+mongoose = require('mongoose').createConnection(config.mongodb.connectionString);
 
 var cloudant;
 var db;
@@ -111,8 +114,8 @@ function initDBConnection() {
 initDBConnection();
 
 app.get('/', 					routes.twitterstats);
-app.get('/organiser', routes.index);
-app.get('/api/data', 	api.api);
+app.get('/organiser', routes.organiser);
+app.get('/api/data', 	api.popularity);
 
 function createResponseData(id, name, value, attachments) {
 
