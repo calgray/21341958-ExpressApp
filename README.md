@@ -11,6 +11,12 @@ and the other a custom web app using express.js. Both repositories are available
 *  NodeRED: https://github.com/nallack/21341958-Bluemix-NodeRED
 *  ExpressApp: https://github.com/nallack/21341958-ExpressApp
 
+This project aims to fetch incoming tweets about various topics, perform
+ sentiment analysis, and store the data for later visualization.
+
+Visualization can be performed either through the nodeRED ui page, a portable
+express.js app, or via using mongodb queries.
+
 
 # NodeRED App
 Available at: https://cits5503-21341958-node-red.au-syd.mybluemix.net
@@ -135,7 +141,10 @@ foundary cli.
   * Triggered via git pushes.
 
 
-## Notes
+## Tutorials
+NodeRED guide at:
+http://noderedguide.com/index.php/2016/05/17/lecture-7-dashboards-and-ui-techniques-for-node-red/
+
 Tutorial of ploting realtime data here: https://anmolkoul.wordpress.com/2015/06/05/interactive-data-visualization-using-d3-js-dc-js-nodejs-and-mongodb/
 
 ## Project Notes
@@ -147,24 +156,3 @@ express app as described here: http://nodered.org/docs/embedding, but maybe do
 that some other time.
 
 Extra nodes are available at: http://flows.nodered.org/
-
-
-## Default ReadMe
-
-This README.md file is displayed on your project page. You should edit this
-file to describe your project, including instructions for building and
-running the project, pointers to the license under which you are making the
-project available, and anything else you think would be useful for others to
-know.
-
-We have created an empty license.txt file for you. Well, actually, it says,
-"<Replace this text with the license you've chosen for your project.>" We
-recommend you edit this and include text for license terms under which you're
-making your code available. A good resource for open source licenses is the
-[Open Source Initiative](http://opensource.org/).
-
-Be sure to update your project's profile with a short description and
-eye-catching graphic.
-
-Finally, consider defining some sprints and work items in Track & Plan to give
-interested developers a sense of your cadence and upcoming enhancements.
